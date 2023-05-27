@@ -1,0 +1,16 @@
+C:\Users\Alicia\source\repos\DP\DP\bin\Debug\DP.exe.config
+C:\Users\Alicia\source\repos\DP\DP\bin\Debug\DP.exe
+C:\Users\Alicia\source\repos\DP\DP\bin\Debug\DP.pdb
+C:\Users\Alicia\source\repos\DP\DP\obj\Debug\DP.csproj.AssemblyReference.cache
+C:\Users\Alicia\source\repos\DP\DP\obj\Debug\DP.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alicia\source\repos\DP\DP\obj\Debug\MainWindow.g.cs
+C:\Users\Alicia\source\repos\DP\DP\obj\Debug\App.g.cs
+C:\Users\Alicia\source\repos\DP\DP\obj\Debug\DP_MarkupCompile.cache
+C:\Users\Alicia\source\repos\DP\DP\obj\Debug\DP_MarkupCompile.lref
+C:\Users\Alicia\source\repos\DP\DP\obj\Debug\MainWindow.baml
+C:\Users\Alicia\source\repos\DP\DP\obj\Debug\DP.g.resources
+C:\Users\Alicia\source\repos\DP\DP\obj\Debug\DP.Properties.Resources.resources
+C:\Users\Alicia\source\repos\DP\DP\obj\Debug\DP.csproj.GenerateResource.cache
+C:\Users\Alicia\source\repos\DP\DP\obj\Debug\DP.csproj.CoreCompileInputs.cache
+C:\Users\Alicia\source\repos\DP\DP\obj\Debug\DP.exe
+C:\Users\Alicia\source\repos\DP\DP\obj\Debug\DP.pdb
