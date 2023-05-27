@@ -8,13 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/bg.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/bgdp.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/buttonleft.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/buttonright.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/check_bold.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/img_close.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/off.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/warning.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("res/bg.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("res/bgdp.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("res/buttonleft.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("res/buttonright.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("res/check_bold.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("res/img_close.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("res/off.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("res/warning.png")]
 
 

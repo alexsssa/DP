@@ -126,21 +126,20 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Resource Include="resource\Arizonia.ttf" />
+    <Resource Include="res\Arizonia.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="resource\bg.png" />
-    <Resource Include="resource\bgdp.png" />
-    <Resource Include="resource\buttonleft.png" />
-    <Resource Include="resource\buttonright.png" />
-    <Resource Include="resource\check_bold.png" />
-    <Resource Include="resource\img_close.png" />
-    <Resource Include="resource\off.png" />
-    <Resource Include="resource\warning.png" />
+    <Resource Include="res\bg.png" />
+    <Resource Include="res\bgdp.png" />
+    <Resource Include="res\buttonleft.png" />
+    <Resource Include="res\buttonright.png" />
+    <Resource Include="res\check_bold.png" />
+    <Resource Include="res\img_close.png" />
+    <Resource Include="res\off.png" />
+    <Resource Include="res\warning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
