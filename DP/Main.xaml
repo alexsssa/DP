@@ -48,5 +48,12 @@
         <Label x:Name="ItemTime" Content="Время: " HorizontalAlignment="Left" Margin="467,218,0,0" VerticalAlignment="Top" FontSize="20" Width="226"/>
         <Label Content="Описание:" HorizontalAlignment="Left" Margin="467,274,0,0"   VerticalAlignment="Top" FontSize="20"/>
         <Label x:Name="ItemText" HorizontalAlignment="Left" Margin="467,309,0,0"   VerticalAlignment="Top" FontSize="20" Height="164" Width="226"/>
+
+
+        <TextBox x:Name="inputItemName"  BorderBrush="{x:Null}"  BorderThickness="0, 0, 0, 0"  FontSize="30"  Foreground="#F89635"  Height="48"  HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="444,137,0,0" VerticalAlignment="Top" Width="260" Background="#7FFDFDFD" Visibility="Hidden" Panel.ZIndex="1"/>
+        <TextBox x:Name="inputItemDate" HorizontalAlignment="Left" Margin="522,187,0,0" VerticalAlignment="Top" FontSize="20" Width="175" BorderBrush="{x:Null}" Background="#7FFFFFFF" Visibility="Hidden" Panel.ZIndex="1"/>
+        <TextBox x:Name="inputItemTime" HorizontalAlignment="Left" Margin="522,218,0,0" VerticalAlignment="Top" FontSize="20" Width="175" Background="#7FFFFFFF" Visibility="Hidden" Panel.ZIndex="1"/>
+        <TextBox x:Name="inputItemText" HorizontalAlignment="Left" Margin="467,309,0,0"   VerticalAlignment="Top" FontSize="20" Height="164" Width="226" Background="#7FFFFFFF" Visibility="Hidden" Panel.ZIndex="1" TextWrapping="Wrap"/>
+        <Button x:Name="inputbutton"  Content="Добавить" HorizontalAlignment="Left" Margin="454,478,0,0" VerticalAlignment="Top" Height="22" Width="243" FontSize="18" Click="button_update" Visibility="Hidden" Panel.ZIndex="1"/>
     </Grid>
 </Window>

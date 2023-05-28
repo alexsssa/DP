@@ -109,7 +109,11 @@ namespace DP
 
         private void button_addtask(object sender, RoutedEventArgs e)
         {
-            // Добавление новой записи
+            inputItemName.Visibility = Visibility.Visible;
+            inputItemDate.Visibility = Visibility.Visible;
+            inputItemTime.Visibility = Visibility.Visible;
+            inputItemText.Visibility = Visibility.Visible;
+            inputbutton.Visibility = Visibility.Visible;
         }
 
         private void button_deltask(object sender, RoutedEventArgs e)
@@ -151,6 +155,32 @@ namespace DP
             ItemDate.Content = "Дата:";
             ItemTime.Content = "Время:";
             ItemText.Content = "";
+            init();
+        }
+
+        private void button_update(object sender, RoutedEventArgs e)
+        {
+            if (inputItemName.Text.Length > 0 && inputItemDate.Text.Length > 0 && inputItemTime.Text.Length > 0)
+            {
+                string query = $"insert into  events(Name, Date, Time, Other, id_user) values('{inputItemName.Text}', '{inputItemDate.Text}', '{inputItemTime.Text}', '{inputItemText.Text}', '{user_id}')";
+
+                SQLiteConnection sqlite = new SQLiteConnection("Data Source=database.db; Version=3;");
+
+                using (sqlite)
+                {
+                    SQLiteCommand sqlcmd;
+                    sqlite.Open();
+                    sqlcmd = sqlite.CreateCommand();
+                    sqlcmd.CommandText = query;
+                    sqlcmd.ExecuteNonQuery();
+                    sqlite.Close();
+                }
+            }
+            inputItemName.Visibility = Visibility.Hidden;
+            inputItemDate.Visibility = Visibility.Hidden;
+            inputItemTime.Visibility = Visibility.Hidden;
+            inputItemText.Visibility = Visibility.Hidden;
+            inputbutton.Visibility = Visibility.Hidden;
             init();
         }
     }
