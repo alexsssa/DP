@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
+using System.Data.SQLite;
+using System.IO;
+using System.Threading;
+using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 
 namespace DP
 {
@@ -21,63 +16,75 @@ namespace DP
     /// </summary>
     public partial class Autorization : Window
     {
-        // подключение созданого класса - DataBase.cs
-        DataBase dataBase = new DataBase();
+
         public Autorization()
         {
             InitializeComponent();
         }
+
+        public bool search_user(ref int id_user)
+        {
+            string query = $"select ID from users where login = '{inputlogin.Text}' and password = '{inputpassword.Password}'";
+
+            SQLiteConnection sqlite = new SQLiteConnection("Data Source=database.db; Version=3;");
+
+            using (sqlite)
+            {
+                SQLiteCommand sqlcmd;
+                sqlite.Open();
+                sqlcmd = sqlite.CreateCommand();
+                sqlcmd.CommandText = query;
+                SQLiteDataReader SQL = sqlcmd.ExecuteReader();
+
+                var values = new List<string>();
+                if (SQL.Read())
+                {
+                    id_user = Convert.ToInt32(SQL["ID"]);
+                }
+
+                if (SQL.HasRows)
+                {
+                    
+                    return true;
+                }
+                sqlite.Close();
+                return false;
+            }
+        }
+
         private void button_done(object sender, RoutedEventArgs e)
         {
-            // Максимальная длина строк как и базе данных
-            inputlogin.MaxLength = 50;
-            inputpassword.MaxLength = 50;
-
-            // Переменные для работы с базой данных
-            var loginUser = inputlogin.Text;
-            var passwordUser = inputpassword.Password;
-
-            // создание адаптера базы данных
-            SqlDataAdapter adapter = new SqlDataAdapter();
-
-            // создание объекта класса таблицы для сверки с БД
-            DataTable table = new DataTable();
-
-            // создание запроса, для проверки Логина и Пароля
-            string querystring = $"select id_user, login_user, password_user from register where login_user = '{loginUser}' and password_user = '{passwordUser}'";
-
-            // связь с бд
-            SqlCommand command = new SqlCommand(querystring, dataBase.getConnection());
-
-            // для получения данных с БД
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-
+            int id = -1;
             if (inputlogin.Text.Length > 0)
             {
                 if (inputpassword.Password.Length > 0)
                 {
-                    if (table.Rows.Count == 1)
+                    if (search_user(ref id))
                     {
-                        new SuccessWindow("Вход выполнен!").Show();
-                        new Main().Activate();
+                        SuccessWindow window = new SuccessWindow("Вход выполнен!");
+                        window.Show();
+                        Thread.Sleep(3000);
+                        window.Close();
+                        new Main(id, inputlogin.Text).Show();
                         this.Close();
                     }
+                    else { new Error("Ошибка: Пользователь не найден").Show(); }
                 }
                 else { new Error("Ошибка: Проверьте поле ввода пароля").Show(); }
             }
             else { new Error("Ошибка: Проверьте поле ввода логина").Show(); }
-            dataBase.CloseConnection();
         }
+
 
         private void button_exit(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            App.Current.Shutdown();
+            
         }
 
         private void button_register(object sender, RoutedEventArgs e)
         {
-            new Registration().ShowDialog();
+            new Registration().Show();
         }
     }
 }

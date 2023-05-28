@@ -11,7 +11,9 @@
         >
     <Grid>
         <!-- ШАПКА ОКНА -->
-        <Image Source="res/bgdp.png" Width="800" Height="575" VerticalAlignment="Center" Margin="-1,0,1,0"></Image>
+        <Image Source="res/bg.png" Width="800" Height="575" VerticalAlignment="Center" Margin="-1,0,1,0"></Image>
+        <Label Background="{x:Null}"  BorderBrush="#4C002B59"  BorderThickness="0,0,0,0"  Content="alexsssa"  FontSize="36"  Foreground="#F89635"  Margin="585,0,103,438"  VerticalAlignment="Bottom"/>
+        <Label Content="- Daily Planner -" Margin="320,0,333,542" FontFamily="./res/#Arizonia" FontSize="20"/>
 
         <Button Height="30" Margin="750, 0,0,545" Canvas.ZIndex="1" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="button_exit">
             <Image x:Name="exit" Source="/res/off.png"/>
@@ -33,15 +35,15 @@
         <Label  x:Name="currentdate"  Background="{x:Null}"  BorderBrush="#4C002B59"  BorderThickness="0,0,0,0"  Content="16 мая"  FontSize="36"  Foreground="#F89635"  Height="45"  HorizontalAlignment="Left"  HorizontalContentAlignment="Center"  Margin="140,146,0,0"  VerticalAlignment="Top"  Width="180"/>
 
         <!-- СОБЫТИЯ -->
-        <DataGrid x:Name="table" d:ItemsSource="{d:SampleData ItemCount=10}" Margin="115,191,443,102" Background="{x:Null}" FontSize="18" FontFamily="./res/#Arizonia" VerticalContentAlignment="Top" HeadersVisibility="None" AutomationProperties.IsColumnHeader="True" Grid.ColumnSpan="1"/>
+
+        <ListBox x:Name="table" d:ItemsSource="{d:SampleData ItemCount=10}" Margin="115,191,443,102" Background="{x:Null}" FontSize="18" FontFamily="./res/#Arizonia" VerticalContentAlignment="Top" SelectionChanged="table_SelectionChanged"/>
 
         <Button Margin="129,478,465,70" Content="Добавить событие" FontSize="18" Click="button_addtask" Background="{x:Null}"/>
 
         <!-- ОПИСАНИЕ СОБЫТИЙ -->
-        <Button Content="Удалить" HorizontalAlignment="Left" Margin="585,478,0,0" VerticalAlignment="Top" Height="22" Width="112" FontSize="14" Click="button_deltask"/>
-        <Button Content="Выполнено" HorizontalAlignment="Left" Margin="468,478,0,0" VerticalAlignment="Top" Height="22" Width="112" FontSize="16" Click="button_donetask"/>
+        <Button Content="Удалить" HorizontalAlignment="Left" Margin="454,478,0,0" VerticalAlignment="Top" Height="22" Width="243" FontSize="18" Click="button_deltask"/>
 
-        <Label x:Name="ItemName" Background="{x:Null}"  BorderBrush="#4C002B59"  BorderThickness="0,0,0,0"  Content="{Binding ElementName=listbox, Path=SelectedItem}"  FontSize="36"  Foreground="#F89635"  Height="39"  HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="465,146,0,0" VerticalAlignment="Top" Width="228"/>
+        <Label x:Name="ItemName" Background="{x:Null}"  BorderBrush="#4C002B59"  BorderThickness="0,0,0,0"  Content="{Binding ElementName=table, Path=SelectedItem}"  FontSize="30"  Foreground="#F89635"  Height="48"  HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="444,137,0,0" VerticalAlignment="Top" Width="260"/>
         <Label x:Name="ItemDate" Content="Дата:" HorizontalAlignment="Left" Margin="467,187,0,0" VerticalAlignment="Top" FontSize="20" Width="219"/>
         <Label x:Name="ItemTime" Content="Время: " HorizontalAlignment="Left" Margin="467,218,0,0" VerticalAlignment="Top" FontSize="20" Width="226"/>
         <Label Content="Описание:" HorizontalAlignment="Left" Margin="467,274,0,0"   VerticalAlignment="Top" FontSize="20"/>

@@ -8,17 +8,27 @@
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
+        Background="{x:Null}"
         >
     <Grid>
         <!-- ШАПКА ОКНА -->
         <Image Source="res/bg.png" HorizontalAlignment="Center" Width="800" Height="575" VerticalAlignment="Center"></Image>
+        
         <Button Height="30" Margin="759,2,0,545" Canvas.ZIndex="1" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="button_exit">
             <Image x:Name="exit" Source="/res/off.png"/>
         </Button>
+        
+        <Label Content="Login page" FontFamily="./res/#Arizonia" FontSize="32" Margin="506,95,145,421"/>
+        <Label Content="alexsssa" FontFamily="./res/#Arizonia" FontSize="36" Margin="112,58,539,458" Foreground="#F89635"/>
+        <Label Content="Login Page" Margin="360,1,333,542" FontFamily="./res/#Arizonia" FontSize="20"/>
+        
 
         <!-- ФОРМА ВХОДА -->
-        <TextBox x:Name="inputlogin" Margin="440,159,100,379" Foreground="DarkGray" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" FontFamily="./res/#Arizonia" FontSize="26" BorderThickness="0,0,0,1"/>
-        <PasswordBox x:Name="inputpassword" Margin="440,219,100,324" Foreground="DarkGray" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" FontFamily="./res/#Arizonia" FontSize="20" PasswordChar="*" BorderThickness="0,0,0,1" ClipToBounds="True"/>
+        <Label Content="Login:" FontFamily="./res/#Arizonia" FontSize="32" Margin="271,151,429,365"/>
+        <Label Content="Password:" FontFamily="./res/#Arizonia" FontSize="32" Margin="236,210,443,306"/>
+        
+        <TextBox x:Name="inputlogin" Margin="440,159,100,379" Foreground="DimGray" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" FontFamily="./res/#Arizonia" FontSize="26" BorderThickness="0,0,0,1"/>
+        <PasswordBox x:Name="inputpassword" Margin="440,219,100,324" Foreground="DimGray" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" FontFamily="./res/#Arizonia" FontSize="20" PasswordChar="*" BorderThickness="0,0,0,1" ClipToBounds="True"/>
 
         <!-- КНОПКИ -->
         <Button Content="Done" HorizontalAlignment="Left" Margin="530,295,0,0" VerticalAlignment="Top" Height="30" Width="80" Background="{x:Null}" BorderBrush="Black" FontFamily="./res/#Arizonia" FontSize="26" BorderThickness="0,0,0,1" Click="button_done"/>

@@ -32,7 +32,7 @@
                     <ColumnDefinition Width="70*"/>
                 </Grid.ColumnDefinitions>
                 <Image Name="appLogo" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="71" Height="59" Source="/res/warning.png"/>
-                <TextBlock Name="txtMessage" Text="Ошибка: Пароли не совпадают" Foreground="#FF444444" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap" Grid.Column="1"/>
+                <TextBlock Name="txtMessage" Foreground="#FF444444" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap" Grid.Column="1"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
